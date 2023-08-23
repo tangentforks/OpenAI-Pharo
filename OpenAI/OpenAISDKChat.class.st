@@ -56,6 +56,17 @@ OpenAISDKChat >> evaluate [
 		do: [ :error | error inspect ]
 ]
 
+{ #category : #'gt - extensions' }
+OpenAISDKChat >> gtContentFor: aView [
+  <gtView>
+  ^ aView textEditor
+    title: 'Content';
+    priority: 10;
+    text: [self content asRopedText]
+      
+
+]
+
 { #category : #accessing }
 OpenAISDKChat >> role [
 

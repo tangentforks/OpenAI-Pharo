@@ -69,6 +69,18 @@ OpenAIChatSession >> chats: anObject [
 	chats := anObject
 ]
 
+{ #category : #'gt - extensions' }
+OpenAIChatSession >> gtChatFor: aView [
+  <gtView>
+  ^ aView columnedList 
+    title: 'Chat';
+    priority: 10;
+    items: [self chats];
+    column: 'Role' text: [:c| c role];
+    column: 'content' text: [:c | c content]
+
+]
+
 { #category : #initialization }
 OpenAIChatSession >> initialize [
 
