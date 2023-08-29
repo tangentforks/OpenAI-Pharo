@@ -38,12 +38,7 @@ Class >> classResponsibilityCollaboratorWithSDK: anOpenAISDK [
 
 { #category : #'*OpenAI' }
 Class >> definitionAndSourceCode [
-
-	| classSourceStream |
-	classSourceStream := WriteStream on: String new.
-	self class fileOutOn: classSourceStream.
-
-	^ classSourceStream contents
+	^ TonelWriter sourceCodeOf: self.
 ]
 
 { #category : #'*OpenAI' }
